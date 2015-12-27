@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		314A15641C30680800903193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15631C30680800903193 /* AppDelegate.swift */; };
-		314A15661C30680800903193 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15651C30680800903193 /* FirstViewController.swift */; };
-		314A15681C30680800903193 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15671C30680800903193 /* SecondViewController.swift */; };
-		314A156B1C30680800903193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314A15691C30680800903193 /* Main.storyboard */; };
 		314A156D1C30680800903193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314A156C1C30680800903193 /* Assets.xcassets */; };
 		314A15701C30680800903193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314A156E1C30680800903193 /* LaunchScreen.storyboard */; };
 		314A157B1C30680800903193 /* lurkFishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A157A1C30680800903193 /* lurkFishTests.swift */; };
 		314A15861C30680800903193 /* lurkFishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15851C30680800903193 /* lurkFishUITests.swift */; };
+		314A15941C30682400903193 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 314A15931C30682400903193 /* Podfile */; };
+		314A15961C3073E600903193 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15951C3073E600903193 /* FeedVC.swift */; };
+		314A159B1C3086A600903193 /* FeedVC-Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159A1C3086A600903193 /* FeedVC-Table.swift */; };
+		314A159D1C308D0500903193 /* ThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159C1C308D0500903193 /* ThreadNode.swift */; };
+		314A15A01C308E8200903193 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159F1C308E8200903193 /* Thread.swift */; };
+		314A15A21C30906400903193 /* RedditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15A11C30906400903193 /* RedditResponse.swift */; };
+		314A15A41C3095A400903193 /* FeedVC-Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15A31C3095A400903193 /* FeedVC-Data.swift */; };
+		627D854411EEB28D863BF85C /* Pods_lurkFish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		085D2095F5874340D010C698 /* Pods-lurkFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lurkFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish.release.xcconfig"; sourceTree = "<group>"; };
+		12DBA2B355CDD2B4192E2542 /* Pods-lurkFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lurkFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish.debug.xcconfig"; sourceTree = "<group>"; };
 		314A15601C30680800903193 /* lurkFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lurkFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314A15631C30680800903193 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		314A15651C30680800903193 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		314A15671C30680800903193 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		314A156A1C30680800903193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		314A156C1C30680800903193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		314A156F1C30680800903193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		314A15711C30680800903193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 		314A15811C30680800903193 /* lurkFishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lurkFishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		314A15851C30680800903193 /* lurkFishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lurkFishUITests.swift; sourceTree = "<group>"; };
 		314A15871C30680800903193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		314A15931C30682400903193 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		314A15951C3073E600903193 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		314A159A1C3086A600903193 /* FeedVC-Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedVC-Table.swift"; sourceTree = "<group>"; };
+		314A159C1C308D0500903193 /* ThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadNode.swift; sourceTree = "<group>"; };
+		314A159F1C308E8200903193 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		314A15A11C30906400903193 /* RedditResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditResponse.swift; sourceTree = "<group>"; };
+		314A15A31C3095A400903193 /* FeedVC-Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedVC-Data.swift"; sourceTree = "<group>"; };
+		314A15A51C309F5300903193 /* lurkFish-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lurkFish-Bridging-Header.h"; sourceTree = "<group>"; };
+		8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lurkFish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627D854411EEB28D863BF85C /* Pods_lurkFish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19EB228F3EC534BFE9084312 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12DBA2B355CDD2B4192E2542 /* Pods-lurkFish.debug.xcconfig */,
+				085D2095F5874340D010C698 /* Pods-lurkFish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		314A15571C30680800903193 = {
 			isa = PBXGroup;
 			children = (
+				314A15931C30682400903193 /* Podfile */,
+				314A15A51C309F5300903193 /* lurkFish-Bridging-Header.h */,
 				314A15621C30680800903193 /* lurkFish */,
 				314A15791C30680800903193 /* lurkFishTests */,
 				314A15841C30680800903193 /* lurkFishUITests */,
 				314A15611C30680800903193 /* Products */,
+				19EB228F3EC534BFE9084312 /* Pods */,
+				6C28DE0D4046A2393B9FEF1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				314A15631C30680800903193 /* AppDelegate.swift */,
-				314A15651C30680800903193 /* FirstViewController.swift */,
-				314A15671C30680800903193 /* SecondViewController.swift */,
-				314A15691C30680800903193 /* Main.storyboard */,
+				314A159E1C308D0A00903193 /* Custom */,
+				314A15971C30759400903193 /* ViewControllers */,
 				314A156C1C30680800903193 /* Assets.xcassets */,
 				314A156E1C30680800903193 /* LaunchScreen.storyboard */,
 				314A15711C30680800903193 /* Info.plist */,
@@ -128,6 +154,34 @@
 			path = lurkFishUITests;
 			sourceTree = "<group>";
 		};
+		314A15971C30759400903193 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				314A15951C3073E600903193 /* FeedVC.swift */,
+				314A15A31C3095A400903193 /* FeedVC-Data.swift */,
+				314A159A1C3086A600903193 /* FeedVC-Table.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		314A159E1C308D0A00903193 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				314A159C1C308D0500903193 /* ThreadNode.swift */,
+				314A15A11C30906400903193 /* RedditResponse.swift */,
+				314A159F1C308E8200903193 /* Thread.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		6C28DE0D4046A2393B9FEF1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 314A158A1C30680800903193 /* Build configuration list for PBXNativeTarget "lurkFish" */;
 			buildPhases = (
+				1A5C5A8B2A220485E94D7562 /* Check Pods Manifest.lock */,
 				314A155C1C30680800903193 /* Sources */,
 				314A155D1C30680800903193 /* Frameworks */,
 				314A155E1C30680800903193 /* Resources */,
+				2B17FD5A2367360050B4ADB3 /* Embed Pods Frameworks */,
+				0DDB78B582435CF9294D5B42 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +291,7 @@
 			files = (
 				314A15701C30680800903193 /* LaunchScreen.storyboard in Resources */,
 				314A156D1C30680800903193 /* Assets.xcassets in Resources */,
-				314A156B1C30680800903193 /* Main.storyboard in Resources */,
+				314A15941C30682400903193 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +311,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DDB78B582435CF9294D5B42 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A5C5A8B2A220485E94D7562 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2B17FD5A2367360050B4ADB3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		314A155C1C30680800903193 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				314A15681C30680800903193 /* SecondViewController.swift in Sources */,
+				314A159B1C3086A600903193 /* FeedVC-Table.swift in Sources */,
+				314A15A01C308E8200903193 /* Thread.swift in Sources */,
+				314A15A21C30906400903193 /* RedditResponse.swift in Sources */,
+				314A159D1C308D0500903193 /* ThreadNode.swift in Sources */,
+				314A15A41C3095A400903193 /* FeedVC-Data.swift in Sources */,
+				314A15961C3073E600903193 /* FeedVC.swift in Sources */,
 				314A15641C30680800903193 /* AppDelegate.swift in Sources */,
-				314A15661C30680800903193 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +406,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		314A15691C30680800903193 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				314A156A1C30680800903193 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		314A156E1C30680800903193 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -399,23 +500,30 @@
 		};
 		314A158B1C30680800903193 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12DBA2B355CDD2B4192E2542 /* Pods-lurkFish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = lurkFish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.jonathanyu.lurkFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "lurkFish-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		314A158C1C30680800903193 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 085D2095F5874340D010C698 /* Pods-lurkFish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = lurkFish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.jonathanyu.lurkFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "lurkFish-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -486,6 +594,7 @@
 				314A158C1C30680800903193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		314A158D1C30680800903193 /* Build configuration list for PBXNativeTarget "lurkFishTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +603,7 @@
 				314A158F1C30680800903193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		314A15901C30680800903193 /* Build configuration list for PBXNativeTarget "lurkFishUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +612,7 @@
 				314A15921C30680800903193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

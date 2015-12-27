@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabBar: UITabBarController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+     
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let feedNVC = UINavigationController()
+        feedNVC.viewControllers = [FeedViewController(url: "hot")]
+        feedNVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.MostViewed, tag: 1)
+        
+        let starNVC = UINavigationController()
+        starNVC.viewControllers = [FeedViewController(url: "new")]
+        starNVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 2)
+        
+        tabBar = UITabBarController()
+        tabBar.viewControllers = [feedNVC, starNVC]
+        
+        self.window!.rootViewController = tabBar
+        self.window!.makeKeyAndVisible()
+        
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatRedColorDark(), withContentStyle: UIContentStyle.Contrast)
         return true
     }
 
