@@ -37,6 +37,7 @@ class Thread: Mappable {
     var created_utc: NSDate?
     var visited: Bool?
     var ups: Int?
+    var preview: [ImageContainer]?
     
     required init?(_ map: Map) {
         
@@ -70,5 +71,6 @@ class Thread: Mappable {
         created_utc <- (map["data.created_utc"], DateTransform())
         visited <- map["data.visited"]
         ups <- map["data.ups"]
+        preview <- map["data.preview.images"]
     }
 }

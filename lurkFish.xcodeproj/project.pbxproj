@@ -15,10 +15,13 @@
 		314A15941C30682400903193 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 314A15931C30682400903193 /* Podfile */; };
 		314A15961C3073E600903193 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15951C3073E600903193 /* FeedVC.swift */; };
 		314A159B1C3086A600903193 /* FeedVC-Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159A1C3086A600903193 /* FeedVC-Table.swift */; };
-		314A159D1C308D0500903193 /* ThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159C1C308D0500903193 /* ThreadNode.swift */; };
 		314A15A01C308E8200903193 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159F1C308E8200903193 /* Thread.swift */; };
 		314A15A21C30906400903193 /* RedditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15A11C30906400903193 /* RedditResponse.swift */; };
 		314A15A41C3095A400903193 /* FeedVC-Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15A31C3095A400903193 /* FeedVC-Data.swift */; };
+		31BBC05C1C35A4FF00D8B86D /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC05B1C35A4FF00D8B86D /* ImageContainer.swift */; };
+		31BBC05E1C35A55100D8B86D /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC05D1C35A55100D8B86D /* ImageURL.swift */; };
+		31BBC0601C35DD9000D8B86D /* ThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC05F1C35DD9000D8B86D /* ThreadNode.swift */; };
+		31BBC0621C35DD9700D8B86D /* ImageThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC0611C35DD9700D8B86D /* ImageThreadNode.swift */; };
 		627D854411EEB28D863BF85C /* Pods_lurkFish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,11 +59,14 @@
 		314A15931C30682400903193 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		314A15951C3073E600903193 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		314A159A1C3086A600903193 /* FeedVC-Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedVC-Table.swift"; sourceTree = "<group>"; };
-		314A159C1C308D0500903193 /* ThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadNode.swift; sourceTree = "<group>"; };
 		314A159F1C308E8200903193 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		314A15A11C30906400903193 /* RedditResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditResponse.swift; sourceTree = "<group>"; };
 		314A15A31C3095A400903193 /* FeedVC-Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedVC-Data.swift"; sourceTree = "<group>"; };
 		314A15A51C309F5300903193 /* lurkFish-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lurkFish-Bridging-Header.h"; sourceTree = "<group>"; };
+		31BBC05B1C35A4FF00D8B86D /* ImageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
+		31BBC05D1C35A55100D8B86D /* ImageURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
+		31BBC05F1C35DD9000D8B86D /* ThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadNode.swift; sourceTree = "<group>"; };
+		31BBC0611C35DD9700D8B86D /* ImageThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageThreadNode.swift; sourceTree = "<group>"; };
 		8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lurkFish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				314A15631C30680800903193 /* AppDelegate.swift */,
+				31BBC05A1C35A47D00D8B86D /* Models */,
 				314A159E1C308D0A00903193 /* Custom */,
 				314A15971C30759400903193 /* ViewControllers */,
 				314A156C1C30680800903193 /* Assets.xcassets */,
@@ -167,11 +174,21 @@
 		314A159E1C308D0A00903193 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				314A159C1C308D0500903193 /* ThreadNode.swift */,
+				31BBC05F1C35DD9000D8B86D /* ThreadNode.swift */,
+				31BBC0611C35DD9700D8B86D /* ImageThreadNode.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		31BBC05A1C35A47D00D8B86D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31BBC05B1C35A4FF00D8B86D /* ImageContainer.swift */,
+				31BBC05D1C35A55100D8B86D /* ImageURL.swift */,
 				314A15A11C30906400903193 /* RedditResponse.swift */,
 				314A159F1C308E8200903193 /* Thread.swift */,
 			);
-			name = Custom;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6C28DE0D4046A2393B9FEF1E /* Frameworks */ = {
@@ -367,10 +384,13 @@
 				314A159B1C3086A600903193 /* FeedVC-Table.swift in Sources */,
 				314A15A01C308E8200903193 /* Thread.swift in Sources */,
 				314A15A21C30906400903193 /* RedditResponse.swift in Sources */,
-				314A159D1C308D0500903193 /* ThreadNode.swift in Sources */,
+				31BBC05E1C35A55100D8B86D /* ImageURL.swift in Sources */,
 				314A15A41C3095A400903193 /* FeedVC-Data.swift in Sources */,
+				31BBC05C1C35A4FF00D8B86D /* ImageContainer.swift in Sources */,
+				31BBC0601C35DD9000D8B86D /* ThreadNode.swift in Sources */,
 				314A15961C3073E600903193 /* FeedVC.swift in Sources */,
 				314A15641C30680800903193 /* AppDelegate.swift in Sources */,
+				31BBC0621C35DD9700D8B86D /* ImageThreadNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +530,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "lurkFish-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -524,6 +545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.jonathanyu.lurkFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "lurkFish-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

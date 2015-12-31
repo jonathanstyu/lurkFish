@@ -15,7 +15,7 @@ extension FeedViewController {
         threadTable = ASTableView(frame: CGRectZero, style: UITableViewStyle.Plain, asyncDataFetching: true)
         threadTable.asyncDataSource = self
         threadTable.asyncDelegate = self
-        threadTable.separatorStyle = UITableViewCellSeparatorStyle.None
+        threadTable.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         view.addSubview(threadTable)
     }
     
@@ -28,9 +28,21 @@ extension FeedViewController {
     }
     
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
-        let textCellNode = ThreadNode(thread: self.threadArray[indexPath.row])
+        let currentThread = self.threadArray[indexPath.row]
+        switch currentThread.post_hint {
+        case "link"?:
+            return ThreadNode(thread: currentThread)
+        case "image"?:
+            return ImageThreadNode(thread: currentThread)
+        default:
+            return ThreadNode(thread: currentThread)
+        }
         
-        return textCellNode
+        
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        print(self.threadArray[indexPath.row])
     }
     
 }
