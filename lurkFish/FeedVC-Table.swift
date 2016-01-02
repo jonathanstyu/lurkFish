@@ -34,6 +34,8 @@ extension FeedViewController {
             return ThreadNode(thread: currentThread)
         case "image"?:
             return ImageThreadNode(thread: currentThread)
+        case "rich:video"?:
+            return VideoThreadNode(thread: currentThread)
         default:
             return ThreadNode(thread: currentThread)
         }

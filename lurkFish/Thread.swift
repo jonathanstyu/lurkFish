@@ -25,6 +25,7 @@ class Thread: Mappable {
     var hidden: Bool?
     var thumbnail: String?
     var subreddit_id: String?
+    var link_flair_text: String?
     var edited: Bool?
     var downs: Int?
     var saved: Bool?
@@ -38,6 +39,7 @@ class Thread: Mappable {
     var visited: Bool?
     var ups: Int?
     var preview: [ImageContainer]?
+    var media: Media?
     
     required init?(_ map: Map) {
         
@@ -57,6 +59,7 @@ class Thread: Mappable {
         score <- map["data.score"]
         over_18 <- map["data.over_18"]
         hidden <- map["data.hidden"]
+        link_flair_text <- map["data.link_flair_text"]
         thumbnail <- map["data.thumbnail"]
         subreddit_id <- map["data.subreddit_id"]
         edited <- map["data.edited"]
@@ -72,5 +75,6 @@ class Thread: Mappable {
         visited <- map["data.visited"]
         ups <- map["data.ups"]
         preview <- map["data.preview.images"]
+        media <- map["data.media.oembed"]
     }
 }
