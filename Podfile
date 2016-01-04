@@ -8,7 +8,7 @@ target 'lurkFish' do
     pod 'FBSDKCoreKit'
     pod 'Alamofire'
     pod 'AlamofireObjectMapper'
-    pod 'Then'
+    pod 'AsyncSwift'
 end
 
 target 'lurkFishTests' do

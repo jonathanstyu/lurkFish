@@ -12,6 +12,7 @@ import ObjectMapper
 class RedditResponse: Mappable {
     var modhash: String?
     var children: [Thread]?
+    var after: String?
     
     required init?(_ map: Map) {
         
@@ -20,5 +21,6 @@ class RedditResponse: Mappable {
     func mapping(map: Map) {
         modhash <- map["data.modhash"]
         children <- map["data.children"]
+        after <- map["data.after"]
     }
 }

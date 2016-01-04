@@ -28,16 +28,16 @@ extension FeedViewController {
     }
     
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
-        let currentThread = self.threadArray[indexPath.row]
-        switch currentThread.post_hint {
+        let currentThreadVM = ThreadViewModel(thread: self.threadArray[indexPath.row])
+        switch currentThreadVM.type {
         case "link"?:
-            return ThreadNode(thread: currentThread)
+            return ThreadNode(threadVM: currentThreadVM)
         case "image"?:
-            return ImageThreadNode(thread: currentThread)
+            return ImageThreadNode(threadVM: currentThreadVM)
         case "rich:video"?:
-            return VideoThreadNode(thread: currentThread)
+            return VideoThreadNode(threadVM: currentThreadVM)
         default:
-            return ThreadNode(thread: currentThread)
+            return ThreadNode(threadVM: currentThreadVM)
         }
         
         

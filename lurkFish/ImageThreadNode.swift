@@ -13,32 +13,30 @@ class ImageThreadNode: ThreadNode {
     var imageNode: ASNetworkImageNode
     var imageNodeSize: CGSize!
     
-    override init(thread: Thread) {
+    override init(threadVM: ThreadViewModel) {
         imageNode = ASNetworkImageNode()
-        imageNode.URL = NSURL(string: thread.url!)
+        imageNode.URL = NSURL(string: threadVM.url!)
         imageNode.backgroundColor = UIColor.flatGrayColor()
-        super.init(thread: thread)
+        super.init(threadVM: threadVM)
         
         postType = "image"
-        setUpSubNodesWithThread(thread)
+        setUpSubNodesWithThread(threadVM)
     }
     
     override func layoutSpecThatFits(constrainedSize: ASSizeRange) -> ASLayoutSpec! {
         super.layoutSpecThatFits(constrainedSize)
         
-        let imagePlaceHolder = ASRatioLayoutSpec(ratio: 0.75, child: imageNode)
+        let imagePlaceHolder = ASRatioLayoutSpec(ratio: 1.0, child: imageNode)
         
-        verticalNodeStack.setChildren([headerStack, titleNode, imagePlaceHolder, actionBarStack])
+        verticalNodeStack.setChildren([headerStack, titleNode])
         
-        return ASInsetLayoutSpec(insets: UIEdgeInsets.init(top: cellInsetMargin, left: cellInsetMargin, bottom: cellInsetMargin, right: cellInsetMargin), child: verticalNodeStack)
+//        Puts together the two halves so that we can have a photo that goes edge to edge
+        let topHalf = ASInsetLayoutSpec(insets: UIEdgeInsets.init(top: cellInsetMargin, left: cellInsetMargin, bottom: insideMargin, right: cellInsetMargin), child: verticalNodeStack)
+        let bottomHalf = ASInsetLayoutSpec(insets: UIEdgeInsets.init(top: insideMargin, left: cellInsetMargin, bottom: cellInsetMargin, right: cellInsetMargin), child: actionBarStack)
+        
+        return ASStackLayoutSpec(direction: ASStackLayoutDirection.Vertical, spacing: 0, justifyContent: ASStackLayoutJustifyContent.Start, alignItems: ASStackLayoutAlignItems.Start, children: [topHalf, imagePlaceHolder, bottomHalf])
+        
     }
-    
-//    override func calculateSizeThatFits(constrainedSize: CGSize) -> CGSize {
-//        super.calculateSizeThatFits(constrainedSize)
-//        let imageNodeSize = CGSize(width: cellSizeWidth, height: cellSizeWidth / 2.3)
-//        cellSizeHeight += 2 * insideMargin + (cellSizeWidth / 2.3)
-//        return CGSizeMake(cellSizeWidth, cellSizeHeight + cellInsetMargin)
-//    }
     
 //    override func layout() {
 //        super.layout()
@@ -46,8 +44,8 @@ class ImageThreadNode: ThreadNode {
 //        imageNode.frame = CGRect(x: 0, y: titleNode.frame.maxY + insideMargin, width: cellSizeWidth, height: cellSizeWidth / 2.3)
 //    }
     
-    override func setUpSubNodesWithThread(thread: Thread) {
-        super.setUpSubNodesWithThread(thread)
+    override func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
+        super.setUpSubNodesWithThread(threadVM)
                 
         addSubnode(imageNode)
     }

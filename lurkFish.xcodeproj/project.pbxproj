@@ -24,6 +24,7 @@
 		31BBC0621C35DD9700D8B86D /* ImageThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC0611C35DD9700D8B86D /* ImageThreadNode.swift */; };
 		31BBC0641C37489900D8B86D /* VideoThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC0631C37489900D8B86D /* VideoThreadNode.swift */; };
 		31BBC0661C37493B00D8B86D /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC0651C37493B00D8B86D /* Media.swift */; };
+		31BBC0681C39A07000D8B86D /* ThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC0671C39A07000D8B86D /* ThreadViewModel.swift */; };
 		627D854411EEB28D863BF85C /* Pods_lurkFish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		31BBC0611C35DD9700D8B86D /* ImageThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageThreadNode.swift; sourceTree = "<group>"; };
 		31BBC0631C37489900D8B86D /* VideoThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoThreadNode.swift; sourceTree = "<group>"; };
 		31BBC0651C37493B00D8B86D /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		31BBC0671C39A07000D8B86D /* ThreadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewModel.swift; sourceTree = "<group>"; };
 		8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lurkFish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 			children = (
 				314A15631C30680800903193 /* AppDelegate.swift */,
 				31BBC05A1C35A47D00D8B86D /* Models */,
+				31BBC0691C39A08100D8B86D /* ViewModels */,
 				314A159E1C308D0A00903193 /* Custom */,
 				314A15971C30759400903193 /* ViewControllers */,
 				314A156C1C30680800903193 /* Assets.xcassets */,
@@ -195,6 +198,14 @@
 				314A159F1C308E8200903193 /* Thread.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		31BBC0691C39A08100D8B86D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				31BBC0671C39A07000D8B86D /* ThreadViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		6C28DE0D4046A2393B9FEF1E /* Frameworks */ = {
@@ -387,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31BBC0681C39A07000D8B86D /* ThreadViewModel.swift in Sources */,
 				314A159B1C3086A600903193 /* FeedVC-Table.swift in Sources */,
 				31BBC0661C37493B00D8B86D /* Media.swift in Sources */,
 				314A15A01C308E8200903193 /* Thread.swift in Sources */,

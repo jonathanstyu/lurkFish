@@ -15,7 +15,6 @@ class Media: Mappable {
     var title: String?
     var url: String?
     var description: String?
-//    var embedType: String?
     var author_name: String?
     var height: Int?
     var width: Int?
@@ -37,7 +36,6 @@ class Media: Mappable {
         title <- map["title"]
         url <- map["url"]
         description <- map["description"]
-//        embedType <- map["oembed.type"]
         author_name <- map["author_name"]
         height <- map["height"]
         width <- map["width"]
