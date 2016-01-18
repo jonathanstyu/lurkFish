@@ -32,6 +32,8 @@ extension FeedViewController {
         switch currentThreadVM.type {
         case "link"?:
             return ThreadNode(threadVM: currentThreadVM)
+        case "text"?:
+            return TextThreadNode(threadVM: currentThreadVM)
         case "image"?:
             return ImageThreadNode(threadVM: currentThreadVM)
         case "rich:video"?:

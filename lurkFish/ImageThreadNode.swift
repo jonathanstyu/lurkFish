@@ -36,8 +36,7 @@ class ImageThreadNode: ThreadNode {
         
         return ASStackLayoutSpec(direction: ASStackLayoutDirection.Vertical, spacing: 0, justifyContent: ASStackLayoutJustifyContent.Start, alignItems: ASStackLayoutAlignItems.Start, children: [topHalf, imagePlaceHolder, bottomHalf])
         
-    }
-    
+    }    
 //    override func layout() {
 //        super.layout()
 //        

@@ -22,6 +22,7 @@ class ThreadViewModel: NSObject {
     var subreddit: String?
     var url: String?
     var title: String?
+    var bodyText: String?
     
     var scoreColor: UIColor!
     
@@ -29,12 +30,20 @@ class ThreadViewModel: NSObject {
         self.thread = thread
         self.date = NSDateFormatter.localizedStringFromDate(thread.created_utc!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         self.numberOfComments = String(thread.num_comments!)
-        self.type = thread.post_hint
         self.author = thread.author
         self.subreddit = thread.subreddit
         self.url = thread.url
         self.title = thread.title
         self.score = String(thread.score!)
+        
+//        Determines the type of post this is going to be 
+        if self.thread?.selftext_html != nil {
+            self.type = "text"
+            self.bodyText = thread.selftext_html
+        } else {
+            self.type = thread.post_hint
+        }
+        
         if self.thread?.media != nil {
             self.attachedMedia = thread.media!
         }

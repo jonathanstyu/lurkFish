@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         feedNVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.MostViewed, tag: 1)
         
         let starNVC = UINavigationController()
-        starNVC.viewControllers = [FeedViewController(url: "new")]
+        starNVC.viewControllers = [FeedViewController(url: "/r/bitcoin")]
         starNVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 2)
         
         tabBar = UITabBarController()

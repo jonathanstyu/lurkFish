@@ -40,6 +40,8 @@ class Thread: Mappable {
     var ups: Int?
     var preview: [ImageContainer]?
     var media: Media?
+    var selftext_html: String?
+    var selftext_text: String?
     
     required init?(_ map: Map) {
         
@@ -76,5 +78,7 @@ class Thread: Mappable {
         ups <- map["data.ups"]
         preview <- map["data.preview.images"]
         media <- map["data.media.oembed"]
+        selftext_html <- map["data.selftext_html"]
+        selftext_text <- map["data.selftext"]
     }
 }
