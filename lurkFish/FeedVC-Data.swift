@@ -13,11 +13,9 @@ import AlamofireObjectMapper
 extension FeedViewController {
     
     func downloadRedditData() {
-        let url = "https://www.reddit.com/\(type).json"
-        Alamofire.request(.GET, url).responseObject { (response: Response<RedditResponse, NSError>) -> Void in
-            let rawredditdata = response.result.value
-            if let children = rawredditdata!.children {
-                self.threadArray += children
+        self.dataSource = FeedDataItems(type: type)
+        dataSource.downloadModelItems { (downloaded) -> Void in
+            if downloaded {
                 self.threadTable.reloadData()
             }
         }

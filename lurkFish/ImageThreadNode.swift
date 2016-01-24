@@ -37,11 +37,6 @@ class ImageThreadNode: ThreadNode {
         return ASStackLayoutSpec(direction: ASStackLayoutDirection.Vertical, spacing: 0, justifyContent: ASStackLayoutJustifyContent.Start, alignItems: ASStackLayoutAlignItems.Start, children: [topHalf, imagePlaceHolder, bottomHalf])
         
     }    
-//    override func layout() {
-//        super.layout()
-//        
-//        imageNode.frame = CGRect(x: 0, y: titleNode.frame.maxY + insideMargin, width: cellSizeWidth, height: cellSizeWidth / 2.3)
-//    }
     
     override func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
         super.setUpSubNodesWithThread(threadVM)

@@ -15,6 +15,7 @@ class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDe
     var type: String!
     var threadTable: ASTableView!
     var threadArray: [Thread]
+    var dataSource: FeedDataItems!
     
     convenience init() {
         self.init(url: "feed")

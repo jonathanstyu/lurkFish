@@ -24,7 +24,7 @@ class ThreadViewModel: NSObject {
     var title: String?
     var bodyText: String?
     
-    var scoreColor: UIColor!
+    var scoreColor: UIColor!    
     
     init(thread: Thread) {
         self.thread = thread

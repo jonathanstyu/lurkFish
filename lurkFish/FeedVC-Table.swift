@@ -24,29 +24,35 @@ extension FeedViewController {
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return threadArray.count
+        return self.dataSource.count()
     }
     
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
-        let currentThreadVM = ThreadViewModel(thread: self.threadArray[indexPath.row])
-        switch currentThreadVM.type {
-        case "link"?:
-            return ThreadNode(threadVM: currentThreadVM)
-        case "text"?:
-            return TextThreadNode(threadVM: currentThreadVM)
-        case "image"?:
-            return ImageThreadNode(threadVM: currentThreadVM)
-        case "rich:video"?:
-            return VideoThreadNode(threadVM: currentThreadVM)
-        default:
-            return ThreadNode(threadVM: currentThreadVM)
-        }
         
+        if self.dataSource.downloaded {
+            let currentThreadVM = self.dataSource.viewModels[indexPath.row]
+            switch currentThreadVM.type {
+            case "link"?:
+                return ThreadNode(threadVM: currentThreadVM)
+            case "text"?:
+                let currentTextThreadNode = TextThreadNode(threadVM: currentThreadVM)
+                currentTextThreadNode.bodyTextNode.addTarget(self, action: "textTapped:", forControlEvents: ASControlNodeEvent.TouchUpInside)
+                return currentTextThreadNode
+            case "image"?:
+                return ImageThreadNode(threadVM: currentThreadVM)
+            case "rich:video"?:
+                return VideoThreadNode(threadVM: currentThreadVM)
+            default:
+                return ThreadNode(threadVM: currentThreadVM)
+            }
+        } else {
+            return EmptyNodeCell()
+        }
         
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        print(self.threadArray[indexPath.row])
+    func textTapped(sender: AnyObject) {
+        print("Hello")
     }
     
 }

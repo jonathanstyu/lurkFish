@@ -27,6 +27,7 @@ class TextThreadNode: ThreadNode {
         super.layoutSpecThatFits(constrainedSize)
         
         verticalTextLayoutSpec = ASStackLayoutSpec(direction: ASStackLayoutDirection.Vertical, spacing: 10.0, justifyContent: ASStackLayoutJustifyContent.Start, alignItems: ASStackLayoutAlignItems.Start, children: [bodyTextNode])
+        
         let textInsetSpec = ASInsetLayoutSpec(insets: UIEdgeInsets.init(top: cellInsetMargin, left: cellInsetMargin, bottom: cellInsetMargin, right: cellInsetMargin), child: verticalTextLayoutSpec)
         
         verticalNodeStack.setChildren([headerStack, titleNode, textInsetSpec, actionBarStack])
@@ -41,17 +42,7 @@ class TextThreadNode: ThreadNode {
             NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
         ]
         bodyTextNode.attributedString = NSAttributedString(string: threadVM.bodyText!, attributes: bodyStringAttributes)
-        bodyTextNode.maximumNumberOfLines = 6
-        bodyTextNode.addTarget(self, action: "tappedTextNode:", forControlEvents: ASControlNodeEvent.TouchUpInside)
-        
+        bodyTextNode.maximumNumberOfLines = 6        
         addSubnode(bodyTextNode)
-    }
-    
-    func tappedTextNode(textNode: ASTextNode) {
-        print(textNode.frame)
-        UIView.animateWithDuration(0.5) { () -> Void in
-            textNode.bounds = CGRect(x: 0, y: 0, width: 100, height: 500)
-        }
-        print(textNode.frame)
     }
 }

@@ -46,13 +46,13 @@ class ThreadNode: ASCellNode {
     }
     
     override func layoutSpecThatFits(constrainedSize: ASSizeRange) -> ASLayoutSpec! {
-        
+//        holds the date submitted, the OP, and type 
         headerBarStack = ASStackLayoutSpec(direction: .Horizontal, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.Stretch, children: [dateSubmittedNode, opNode, postLinkNode])
         
-//        header that contains main header and more
+//        header that contains main title and the info bar (set up above)
         headerStack = ASStackLayoutSpec(direction: .Vertical, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.BaselineFirst, children: [subredditNode, headerBarStack])
         
-//        The bottom part of the entire cell
+//        The bottom part of the entire cell holding score + comments
         actionBarStack = ASStackLayoutSpec(direction: .Horizontal, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.Center, children: [scoreNode, commentsNode])
         
 //        The final stack that puts it all together
