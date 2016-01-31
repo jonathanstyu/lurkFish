@@ -16,7 +16,9 @@ extension FeedViewController {
         self.dataSource = FeedDataItems(type: type)
         dataSource.downloadModelItems { (downloaded) -> Void in
             if downloaded {
-                self.threadTable.reloadData()
+//                self.threadTable.reloadData()
+//                So that I can get that nice fade in effect
+                self.threadTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
             }
         }
     }

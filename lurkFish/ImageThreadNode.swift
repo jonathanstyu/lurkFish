@@ -9,8 +9,9 @@
 import Foundation
 import AsyncDisplayKit
 
-class ImageThreadNode: ThreadNode {
+class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
     var imageNode: JASNetworkImageNode
+    var imagePlaceHolder: ASRatioLayoutSpec?
     var imageNodeSize: CGSize!
     
     override init(threadVM: ThreadViewModel) {
@@ -18,6 +19,7 @@ class ImageThreadNode: ThreadNode {
         imageNode.URL = NSURL(string: threadVM.url!)
         imageNode.backgroundColor = UIColor.flatGrayColor()
         super.init(threadVM: threadVM)
+        imageNode.delegate = self
         
         postType = "image"
         setUpSubNodesWithThread(threadVM)
@@ -26,7 +28,12 @@ class ImageThreadNode: ThreadNode {
     override func layoutSpecThatFits(constrainedSize: ASSizeRange) -> ASLayoutSpec! {
         super.layoutSpecThatFits(constrainedSize)
         
-        let imagePlaceHolder = ASRatioLayoutSpec(ratio: 1.0, child: imageNode)
+        if let image = imageNode.image {
+            let imageSize = image.size
+            imagePlaceHolder = ASRatioLayoutSpec(ratio: imageSize.height / imageSize.width, child: imageNode)
+        } else {
+            imagePlaceHolder = ASRatioLayoutSpec(ratio: 0.5, child: imageNode)
+        }
         
         verticalNodeStack.setChildren([headerStack, titleNode])
         
@@ -34,7 +41,7 @@ class ImageThreadNode: ThreadNode {
         let topHalf = ASInsetLayoutSpec(insets: UIEdgeInsets.init(top: cellInsetMargin, left: cellInsetMargin, bottom: insideMargin, right: cellInsetMargin), child: verticalNodeStack)
         let bottomHalf = ASInsetLayoutSpec(insets: UIEdgeInsets.init(top: insideMargin, left: cellInsetMargin, bottom: cellInsetMargin, right: cellInsetMargin), child: actionBarStack)
         
-        return ASStackLayoutSpec(direction: ASStackLayoutDirection.Vertical, spacing: 0, justifyContent: ASStackLayoutJustifyContent.Start, alignItems: ASStackLayoutAlignItems.Start, children: [topHalf, imagePlaceHolder, bottomHalf])
+        return ASStackLayoutSpec(direction: ASStackLayoutDirection.Vertical, spacing: 0, justifyContent: ASStackLayoutJustifyContent.Start, alignItems: ASStackLayoutAlignItems.Start, children: [topHalf, imagePlaceHolder!, bottomHalf])
     }    
     
     override func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
@@ -49,5 +56,10 @@ class ImageThreadNode: ThreadNode {
     
     override func theaterNode() -> AnyObject {
         return imageNode
+    }
+    
+    func imageNode(imageNode: ASNetworkImageNode!, didLoadImage image: UIImage!) {
+//        When the imageNode within the core item gets fully loaded, we rerun the layout function and then it resizes itself.
+        self.setNeedsLayout()
     }
 }

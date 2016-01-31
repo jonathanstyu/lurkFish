@@ -10,5 +10,5 @@ import Foundation
 import AsyncDisplayKit
 
 class JASNetworkImageNode: ASNetworkImageNode {
-    var tag: Int = 0
+    var tag: Int = 0        
 }

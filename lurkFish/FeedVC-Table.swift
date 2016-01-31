@@ -34,6 +34,7 @@ extension FeedViewController {
             let currentThreadVM = self.dataSource.viewModels[indexPath.row]
             currentThreadNodeCell = MediaObjectTypeDeterminer.determineNodeCellType(currentThreadVM)
             currentThreadNodeCell.attachTheaterNodeTag(indexPath)
+            currentThreadNodeCell.selectionStyle = UITableViewCellSelectionStyle.None
             currentThreadNodeCell.theaterNode().addTarget(self, action: "theaterTapped:", forControlEvents: ASControlNodeEvent.TouchUpInside)
         } else {
             return EmptyNodeCell()
@@ -44,8 +45,24 @@ extension FeedViewController {
     
     func theaterTapped(sender: AnyObject) {
         let currentThread = self.dataSource.viewModels[sender.tag]
-        let contentViewer = ContentViewController(threadVM: currentThread)
-        self.navigationController?.pushViewController(contentViewer, animated: true)
+        let contentViewer: ContentViewController
+        
+        switch currentThread.type {
+        case "link"?:
+            contentViewer = WeblinkContentViewController(threadVM: currentThread)
+            self.navigationController?.pushViewController(contentViewer, animated: true)
+        case "text"?:
+            contentViewer = TextContentViewController(threadVM: currentThread)
+            self.navigationController?.pushViewController(contentViewer, animated: true)
+        case "image"?:
+            let imageView = sender as! JASNetworkImageNode
+            contentViewer = PhotoContentViewController(threadVM: currentThread, image: imageView.image)
+            self.navigationController?.pushViewController(contentViewer, animated: true)
+        case "rich:video"?:
+            break
+        default:
+            contentViewer = ContentViewController(threadVM: currentThread)
+        }
     }
     
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3125C37D1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125C37C1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift */; };
+		3125C3801C5E9BE60094A896 /* TextContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125C37F1C5E9BE60094A896 /* TextContentVC.swift */; };
+		3125C3821C5E9D0C0094A896 /* PhotoContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125C3811C5E9D0C0094A896 /* PhotoContentVC.swift */; };
+		3125C3841C5EB07A0094A896 /* WeblinkContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125C3831C5EB07A0094A896 /* WeblinkContentVC.swift */; };
 		314A15641C30680800903193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15631C30680800903193 /* AppDelegate.swift */; };
 		314A156D1C30680800903193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314A156C1C30680800903193 /* Assets.xcassets */; };
 		314A15701C30680800903193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314A156E1C30680800903193 /* LaunchScreen.storyboard */; };
@@ -56,6 +59,9 @@
 		085D2095F5874340D010C698 /* Pods-lurkFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lurkFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish.release.xcconfig"; sourceTree = "<group>"; };
 		12DBA2B355CDD2B4192E2542 /* Pods-lurkFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lurkFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish.debug.xcconfig"; sourceTree = "<group>"; };
 		3125C37C1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaObjectTypeDeterminer.swift; sourceTree = "<group>"; };
+		3125C37F1C5E9BE60094A896 /* TextContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextContentVC.swift; sourceTree = "<group>"; };
+		3125C3811C5E9D0C0094A896 /* PhotoContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoContentVC.swift; sourceTree = "<group>"; };
+		3125C3831C5EB07A0094A896 /* WeblinkContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeblinkContentVC.swift; sourceTree = "<group>"; };
 		314A15601C30680800903193 /* lurkFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lurkFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314A15631C30680800903193 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		314A156C1C30680800903193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +205,9 @@
 				314A15A31C3095A400903193 /* FeedVC-Data.swift */,
 				314A159A1C3086A600903193 /* FeedVC-Table.swift */,
 				31C8963A1C5537B1008B61F6 /* ContentVC.swift */,
+				3125C37F1C5E9BE60094A896 /* TextContentVC.swift */,
+				3125C3811C5E9D0C0094A896 /* PhotoContentVC.swift */,
+				3125C3831C5EB07A0094A896 /* WeblinkContentVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -440,6 +449,7 @@
 				31C8963B1C5537B1008B61F6 /* ContentVC.swift in Sources */,
 				314A159B1C3086A600903193 /* FeedVC-Table.swift in Sources */,
 				31BBC0661C37493B00D8B86D /* Media.swift in Sources */,
+				3125C3821C5E9D0C0094A896 /* PhotoContentVC.swift in Sources */,
 				314A15A01C308E8200903193 /* Thread.swift in Sources */,
 				314A15A21C30906400903193 /* RedditResponse.swift in Sources */,
 				31BBC05E1C35A55100D8B86D /* ImageURL.swift in Sources */,
@@ -447,10 +457,12 @@
 				31BBC05C1C35A4FF00D8B86D /* ImageContainer.swift in Sources */,
 				31BBC0601C35DD9000D8B86D /* ThreadNode.swift in Sources */,
 				314A15961C3073E600903193 /* FeedVC.swift in Sources */,
+				3125C3841C5EB07A0094A896 /* WeblinkContentVC.swift in Sources */,
 				31BBC0641C37489900D8B86D /* VideoThreadNode.swift in Sources */,
 				31C896441C555B8E008B61F6 /* JASTextNode.swift in Sources */,
 				31C896481C555BED008B61F6 /* JASNetworkImageNode.swift in Sources */,
 				314A15641C30680800903193 /* AppDelegate.swift in Sources */,
+				3125C3801C5E9BE60094A896 /* TextContentVC.swift in Sources */,
 				31C8963D1C5537E0008B61F6 /* FeedDataItems.swift in Sources */,
 				31BBC0621C35DD9700D8B86D /* ImageThreadNode.swift in Sources */,
 				3125C37D1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift in Sources */,
