@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3125C37D1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125C37C1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift */; };
 		314A15641C30680800903193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15631C30680800903193 /* AppDelegate.swift */; };
 		314A156D1C30680800903193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314A156C1C30680800903193 /* Assets.xcassets */; };
 		314A15701C30680800903193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314A156E1C30680800903193 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,8 @@
 		31C8963B1C5537B1008B61F6 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8963A1C5537B1008B61F6 /* ContentVC.swift */; };
 		31C8963D1C5537E0008B61F6 /* FeedDataItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8963C1C5537E0008B61F6 /* FeedDataItems.swift */; };
 		31C8963F1C553ED6008B61F6 /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8963E1C553ED6008B61F6 /* EmptyNode.swift */; };
+		31C896441C555B8E008B61F6 /* JASTextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C896431C555B8E008B61F6 /* JASTextNode.swift */; };
+		31C896481C555BED008B61F6 /* JASNetworkImageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C896471C555BED008B61F6 /* JASNetworkImageNode.swift */; };
 		627D854411EEB28D863BF85C /* Pods_lurkFish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,7 @@
 /* Begin PBXFileReference section */
 		085D2095F5874340D010C698 /* Pods-lurkFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lurkFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish.release.xcconfig"; sourceTree = "<group>"; };
 		12DBA2B355CDD2B4192E2542 /* Pods-lurkFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lurkFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lurkFish/Pods-lurkFish.debug.xcconfig"; sourceTree = "<group>"; };
+		3125C37C1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaObjectTypeDeterminer.swift; sourceTree = "<group>"; };
 		314A15601C30680800903193 /* lurkFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lurkFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314A15631C30680800903193 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		314A156C1C30680800903193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		31C8963A1C5537B1008B61F6 /* ContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 		31C8963C1C5537E0008B61F6 /* FeedDataItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataItems.swift; sourceTree = "<group>"; };
 		31C8963E1C553ED6008B61F6 /* EmptyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyNode.swift; sourceTree = "<group>"; };
+		31C896431C555B8E008B61F6 /* JASTextNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JASTextNode.swift; sourceTree = "<group>"; };
+		31C896471C555BED008B61F6 /* JASNetworkImageNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JASNetworkImageNode.swift; sourceTree = "<group>"; };
 		8DD6D54702F6E91FE1507767 /* Pods_lurkFish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lurkFish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +125,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3125C37E1C5E95010094A896 /* Helper Structs */ = {
+			isa = PBXGroup;
+			children = (
+				3125C37C1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift */,
+			);
+			name = "Helper Structs";
+			sourceTree = "<group>";
+		};
 		314A15571C30680800903193 = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				314A15631C30680800903193 /* AppDelegate.swift */,
+				3125C37E1C5E95010094A896 /* Helper Structs */,
 				31BBC05A1C35A47D00D8B86D /* Models */,
+				31C896421C554F0C008B61F6 /* SubclassedUI */,
 				31BBC0691C39A08100D8B86D /* ViewModelsAndData */,
 				314A159E1C308D0A00903193 /* CustomNodeCells */,
 				314A15971C30759400903193 /* ViewControllers */,
@@ -214,10 +230,19 @@
 		31BBC0691C39A08100D8B86D /* ViewModelsAndData */ = {
 			isa = PBXGroup;
 			children = (
-				31C8963C1C5537E0008B61F6 /* FeedDataItems.swift */,
 				31BBC0671C39A07000D8B86D /* ThreadViewModel.swift */,
 			);
 			name = ViewModelsAndData;
+			sourceTree = "<group>";
+		};
+		31C896421C554F0C008B61F6 /* SubclassedUI */ = {
+			isa = PBXGroup;
+			children = (
+				31C8963C1C5537E0008B61F6 /* FeedDataItems.swift */,
+				31C896431C555B8E008B61F6 /* JASTextNode.swift */,
+				31C896471C555BED008B61F6 /* JASNetworkImageNode.swift */,
+			);
+			name = SubclassedUI;
 			sourceTree = "<group>";
 		};
 		6C28DE0D4046A2393B9FEF1E /* Frameworks */ = {
@@ -423,9 +448,12 @@
 				31BBC0601C35DD9000D8B86D /* ThreadNode.swift in Sources */,
 				314A15961C3073E600903193 /* FeedVC.swift in Sources */,
 				31BBC0641C37489900D8B86D /* VideoThreadNode.swift in Sources */,
+				31C896441C555B8E008B61F6 /* JASTextNode.swift in Sources */,
+				31C896481C555BED008B61F6 /* JASNetworkImageNode.swift in Sources */,
 				314A15641C30680800903193 /* AppDelegate.swift in Sources */,
 				31C8963D1C5537E0008B61F6 /* FeedDataItems.swift in Sources */,
 				31BBC0621C35DD9700D8B86D /* ImageThreadNode.swift in Sources */,
+				3125C37D1C5E90E70094A896 /* MediaObjectTypeDeterminer.swift in Sources */,
 				31C8963F1C553ED6008B61F6 /* EmptyNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

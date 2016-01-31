@@ -39,7 +39,7 @@ class ThreadViewModel: NSObject {
 //        Determines the type of post this is going to be 
         if self.thread?.selftext_html != nil {
             self.type = "text"
-            self.bodyText = thread.selftext_html
+            self.bodyText = thread.selftext_text
         } else {
             self.type = thread.post_hint
         }

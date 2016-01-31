@@ -28,31 +28,24 @@ extension FeedViewController {
     }
     
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
+        let currentThreadNodeCell: ThreadNode
         
         if self.dataSource.downloaded {
             let currentThreadVM = self.dataSource.viewModels[indexPath.row]
-            switch currentThreadVM.type {
-            case "link"?:
-                return ThreadNode(threadVM: currentThreadVM)
-            case "text"?:
-                let currentTextThreadNode = TextThreadNode(threadVM: currentThreadVM)
-                currentTextThreadNode.bodyTextNode.addTarget(self, action: "textTapped:", forControlEvents: ASControlNodeEvent.TouchUpInside)
-                return currentTextThreadNode
-            case "image"?:
-                return ImageThreadNode(threadVM: currentThreadVM)
-            case "rich:video"?:
-                return VideoThreadNode(threadVM: currentThreadVM)
-            default:
-                return ThreadNode(threadVM: currentThreadVM)
-            }
+            currentThreadNodeCell = MediaObjectTypeDeterminer.determineNodeCellType(currentThreadVM)
+            currentThreadNodeCell.attachTheaterNodeTag(indexPath)
+            currentThreadNodeCell.theaterNode().addTarget(self, action: "theaterTapped:", forControlEvents: ASControlNodeEvent.TouchUpInside)
         } else {
             return EmptyNodeCell()
         }
         
+        return currentThreadNodeCell
     }
     
-    func textTapped(sender: AnyObject) {
-        print("Hello")
+    func theaterTapped(sender: AnyObject) {
+        let currentThread = self.dataSource.viewModels[sender.tag]
+        let contentViewer = ContentViewController(threadVM: currentThread)
+        self.navigationController?.pushViewController(contentViewer, animated: true)
     }
     
 }

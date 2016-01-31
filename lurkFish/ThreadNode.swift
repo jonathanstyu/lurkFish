@@ -11,13 +11,14 @@ import ChameleonFramework
 import AsyncDisplayKit
 
 class ThreadNode: ASCellNode {
-    var titleNode: ASTextNode
+    var titleNode: JASTextNode
+    
     var commentsNode: ASTextNode
     var subredditNode: ASTextNode
     var opNode: ASTextNode
     var scoreNode: ASTextNode
     var dateSubmittedNode: ASTextNode
-    var postLinkNode: ASTextNode
+    var typeNode: ASTextNode
     
     var postType: String!
     
@@ -32,13 +33,13 @@ class ThreadNode: ASCellNode {
     var headerBarStack: ASStackLayoutSpec!
     
     init(threadVM: ThreadViewModel) {
-        titleNode = ASTextNode()
+        titleNode = JASTextNode()
         commentsNode = ASTextNode()
         subredditNode = ASTextNode()
         opNode = ASTextNode()
         scoreNode = ASTextNode()
         dateSubmittedNode = ASTextNode()
-        postLinkNode = ASTextNode()
+        typeNode = ASTextNode()
         super.init()
         
         postType = "link"
@@ -47,7 +48,7 @@ class ThreadNode: ASCellNode {
     
     override func layoutSpecThatFits(constrainedSize: ASSizeRange) -> ASLayoutSpec! {
 //        holds the date submitted, the OP, and type 
-        headerBarStack = ASStackLayoutSpec(direction: .Horizontal, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.Stretch, children: [dateSubmittedNode, opNode, postLinkNode])
+        headerBarStack = ASStackLayoutSpec(direction: .Horizontal, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.Stretch, children: [dateSubmittedNode, opNode, typeNode])
         
 //        header that contains main title and the info bar (set up above)
         headerStack = ASStackLayoutSpec(direction: .Vertical, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.BaselineFirst, children: [subredditNode, headerBarStack])
@@ -55,7 +56,7 @@ class ThreadNode: ASCellNode {
 //        The bottom part of the entire cell holding score + comments
         actionBarStack = ASStackLayoutSpec(direction: .Horizontal, spacing: insideMargin, justifyContent: ASStackLayoutJustifyContent.Center, alignItems: ASStackLayoutAlignItems.Center, children: [scoreNode, commentsNode])
         
-//        The final stack that puts it all together
+//        The final stack that puts it all together || note that theaterNode is invisible here but I am looking to add image/text
         verticalNodeStack = ASStackLayoutSpec()
         verticalNodeStack.direction = .Vertical
         verticalNodeStack.spacing = insideMargin
@@ -67,14 +68,14 @@ class ThreadNode: ASCellNode {
     }    
     
     func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
-//        Body text attributes
+//        Body text attributes, holding the title of the linked content
         titleNode.attributedString = NSAttributedString(string: threadVM.title as String!, attributes: [
             NSForegroundColorAttributeName: UIColor.blackColor(),
             NSBackgroundColorAttributeName: UIColor.clearColor(),
             NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 16.0)!
             ])
         
-//        Header Bar Node Components
+//        Header Bar Node Components [subreddit name, poster, date posted, and post link type] which gets wrapped up in speclayout later
 
         subredditNode.attributedString = NSAttributedString(string: threadVM.subreddit as String!, attributes: [
             NSForegroundColorAttributeName: UIColor.blackColor(),
@@ -95,14 +96,14 @@ class ThreadNode: ASCellNode {
             NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 12.0)!
             ])
         
-        postLinkNode.attributedString = NSAttributedString(string: postType, attributes: [
+        typeNode.attributedString = NSAttributedString(string: postType, attributes: [
             NSForegroundColorAttributeName: UIColor.blackColor(),
             NSBackgroundColorAttributeName: UIColor.clearColor(),
             NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 12.0)!,
             NSUnderlineStyleAttributeName: NSNumber(integer: 1)
             ])
         
-//        FooterBar Node Components
+//        FooterBar Node Components, holding the number of contents and judged score
         
         commentsNode.attributedString = NSAttributedString(string: "\(threadVM.numberOfComments!) Comments", attributes: [
             NSForegroundColorAttributeName: UIColor.flatGreenColorDark(),
@@ -116,7 +117,6 @@ class ThreadNode: ASCellNode {
             NSFontAttributeName: UIFont(name: ".SFUIText-Bold", size: 14.0)!
             ])
         
-        
         addSubnode(titleNode)
         addSubnode(commentsNode)
         addSubnode(scoreNode)
@@ -124,6 +124,15 @@ class ThreadNode: ASCellNode {
         
         addSubnode(opNode)
         addSubnode(dateSubmittedNode)
-        addSubnode(postLinkNode)
+        addSubnode(typeNode)
     }
+    
+    func attachTheaterNodeTag(indexPath: NSIndexPath) {
+        titleNode.tag = indexPath.row
+    }
+    
+    func theaterNode() -> AnyObject {
+        return titleNode
+    }
+    
 }

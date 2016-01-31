@@ -10,7 +10,7 @@ import Foundation
 import AsyncDisplayKit
 
 class VideoThreadNode: ThreadNode {
-    var videoNode: ASNetworkImageNode
+    var videoNode: JASNetworkImageNode
     
     var media: Media
     
@@ -23,7 +23,7 @@ class VideoThreadNode: ThreadNode {
     override init(threadVM: ThreadViewModel) {
         media = threadVM.attachedMedia as Media!
         
-        videoNode = ASNetworkImageNode()
+        videoNode = JASNetworkImageNode()
         videoNode.URL = NSURL(string: media.thumbnail_url!)
         videoNode.backgroundColor = UIColor.flatGrayColor()
         
@@ -73,6 +73,14 @@ class VideoThreadNode: ThreadNode {
         addSubnode(videoTitleNode)
         addSubnode(videoProviderNode)
         addSubnode(videoDescriptionNode)
+    }
+    
+    override func attachTheaterNodeTag(indexPath: NSIndexPath) {
+        videoNode.tag = indexPath.row
+    }
+    
+    override func theaterNode() -> AnyObject {
+        return videoNode
     }
     
 }

@@ -10,12 +10,12 @@ import Foundation
 import AsyncDisplayKit
 
 class TextThreadNode: ThreadNode {
-    var bodyTextNode: ASTextNode
+    var bodyTextNode: JASTextNode
     
     var verticalTextLayoutSpec: ASStackLayoutSpec
     
     override init(threadVM: ThreadViewModel) {
-        bodyTextNode = ASTextNode()
+        bodyTextNode = JASTextNode()
         verticalTextLayoutSpec = ASStackLayoutSpec()
         super.init(threadVM: threadVM)
         
@@ -45,4 +45,13 @@ class TextThreadNode: ThreadNode {
         bodyTextNode.maximumNumberOfLines = 6        
         addSubnode(bodyTextNode)
     }
+    
+    override func attachTheaterNodeTag(indexPath: NSIndexPath) {
+        bodyTextNode.tag = indexPath.row
+    }
+    
+    override func theaterNode() -> AnyObject {
+        return bodyTextNode
+    }
+
 }
