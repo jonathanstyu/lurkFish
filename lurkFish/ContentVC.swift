@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
-class ContentViewController: UIViewController {
+class ContentViewController: UIViewController, UIGestureRecognizerDelegate {
     var threadVM: ThreadViewModel?
-    var swipeLeft: UISwipeGestureRecognizerDirection
-    var swipeRight: UISwipeGestureRecognizerDirection
+    var rightEdger: UISwipeGestureRecognizer!
+    var downSwipe: UIGestureRecognizer!
+    var inter: UIPercentDrivenInteractiveTransition!
+    var interacting = false
     
     convenience init() {
         self.init()
@@ -20,11 +22,13 @@ class ContentViewController: UIViewController {
     
     init(threadVM: ThreadViewModel) {
         self.threadVM = threadVM
-        swipeLeft = UISwipeGestureRecognizerDirection.Left
-        swipeRight = UISwipeGestureRecognizerDirection.Right
         super.init(nibName: nil, bundle: nil)
         self.hidesBottomBarWhenPushed = true
-        navigationController?.navigationBarHidden = true
+        
+        rightEdger = UISwipeGestureRecognizer(target: self, action: "dismissSwipe:")
+        rightEdger.direction = .Right
+        rightEdger.delegate = self
+        view.addGestureRecognizer(rightEdger)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,6 +37,10 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.flatWhiteColor()
+    }
+    
+    func dismissSwipe(g: UISwipeGestureRecognizer) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }

@@ -17,7 +17,7 @@ class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
     override init(threadVM: ThreadViewModel) {
         imageNode = JASNetworkImageNode()
         imageNode.URL = NSURL(string: threadVM.url!)
-        imageNode.backgroundColor = UIColor.flatGrayColor()
+        imageNode.placeholderColor = UIColor.flatGrayColor()
         super.init(threadVM: threadVM)
         imageNode.delegate = self
         
@@ -46,7 +46,6 @@ class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
     
     override func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
         super.setUpSubNodesWithThread(threadVM)
-                
         addSubnode(imageNode)
     }
     

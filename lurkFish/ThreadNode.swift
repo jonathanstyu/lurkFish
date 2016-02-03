@@ -70,36 +70,29 @@ class ThreadNode: ASCellNode {
     func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
 //        Body text attributes, holding the title of the linked content
         titleNode.attributedString = NSAttributedString(string: threadVM.title as String!, attributes: [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
-            NSBackgroundColorAttributeName: UIColor.clearColor(),
-            NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 16.0)!
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleTitle3),
+            NSForegroundColorAttributeName: UIColor.blackColor()
             ])
+        titleNode.placeholderColor = UIColor.flatBlackColor()
         
 //        Header Bar Node Components [subreddit name, poster, date posted, and post link type] which gets wrapped up in speclayout later
 
         subredditNode.attributedString = NSAttributedString(string: threadVM.subreddit as String!, attributes: [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
-            NSBackgroundColorAttributeName: UIColor.clearColor(),
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
-            NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 18.0)!
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline),
+            NSForegroundColorAttributeName: UIColor.blackColor()
             ])
         
         opNode.attributedString = NSAttributedString(string: "OP: \(threadVM.author as String!)", attributes: [
             NSForegroundColorAttributeName: UIColor.flatBlueColorDark(),
-            NSBackgroundColorAttributeName: UIColor.clearColor(),
-            NSFontAttributeName: UIFont.boldSystemFontOfSize(12.0)
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
             ])
         
         dateSubmittedNode.attributedString = NSAttributedString(string: threadVM.date, attributes: [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
-            NSBackgroundColorAttributeName: UIColor.clearColor(),
-            NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 12.0)!
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
             ])
         
         typeNode.attributedString = NSAttributedString(string: postType, attributes: [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
-            NSBackgroundColorAttributeName: UIColor.clearColor(),
-            NSFontAttributeName: UIFont(name: ".SFUIText-Medium", size: 12.0)!,
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1),
             NSUnderlineStyleAttributeName: NSNumber(integer: 1)
             ])
         

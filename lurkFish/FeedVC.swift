@@ -15,7 +15,7 @@ class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDe
     var type: String!
     var threadTable: ASTableView!
     var threadArray: [Thread]
-    var dataSource: FeedDataItems!
+    var dataSource: FeedItemManager!
     
     convenience init() {
         self.init(url: "feed")
@@ -29,6 +29,10 @@ class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDe
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewDidLoad() {

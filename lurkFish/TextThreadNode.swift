@@ -39,10 +39,14 @@ class TextThreadNode: ThreadNode {
         super.setUpSubNodesWithThread(threadVM)
         let bodyStringAttributes: [String : AnyObject] = [
             NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding,
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         ]
         bodyTextNode.attributedString = NSAttributedString(string: threadVM.bodyText!, attributes: bodyStringAttributes)
-        bodyTextNode.maximumNumberOfLines = 6        
+        bodyTextNode.maximumNumberOfLines = 6
+        bodyTextNode.shadowColor = UIColor.blackColor().CGColor
+        bodyTextNode.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        bodyTextNode.shadowRadius = 5.0
         addSubnode(bodyTextNode)
     }
     

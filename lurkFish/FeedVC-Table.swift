@@ -15,6 +15,7 @@ extension FeedViewController {
         threadTable = ASTableView(frame: CGRectZero, style: UITableViewStyle.Plain, asyncDataFetching: true)
         threadTable.asyncDataSource = self
         threadTable.asyncDelegate = self
+        threadTable.backgroundColor = UIColor.flatWhiteColor()
         threadTable.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         view.addSubview(threadTable)
     }
@@ -29,16 +30,11 @@ extension FeedViewController {
     
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
         let currentThreadNodeCell: ThreadNode
-        
-        if self.dataSource.downloaded {
-            let currentThreadVM = self.dataSource.viewModels[indexPath.row]
-            currentThreadNodeCell = MediaObjectTypeDeterminer.determineNodeCellType(currentThreadVM)
-            currentThreadNodeCell.attachTheaterNodeTag(indexPath)
-            currentThreadNodeCell.selectionStyle = UITableViewCellSelectionStyle.None
-            currentThreadNodeCell.theaterNode().addTarget(self, action: "theaterTapped:", forControlEvents: ASControlNodeEvent.TouchUpInside)
-        } else {
-            return EmptyNodeCell()
-        }
+        let currentThreadVM = self.dataSource.viewModels[indexPath.row]
+        currentThreadNodeCell = MediaObjectTypeDeterminer.determineNodeCellType(currentThreadVM)
+        currentThreadNodeCell.attachTheaterNodeTag(indexPath)
+        currentThreadNodeCell.selectionStyle = UITableViewCellSelectionStyle.None
+        currentThreadNodeCell.theaterNode().addTarget(self, action: "theaterTapped:", forControlEvents: ASControlNodeEvent.TouchUpInside)
         
         return currentThreadNodeCell
     }
@@ -46,6 +42,12 @@ extension FeedViewController {
     func theaterTapped(sender: AnyObject) {
         let currentThread = self.dataSource.viewModels[sender.tag]
         let contentViewer: ContentViewController
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            (sender as! ASDisplayNode).backgroundColor = UIColor.flatWhiteColorDark()
+            }) { (completed) -> Void in
+                (sender as! ASDisplayNode).backgroundColor = UIColor.flatWhiteColor()
+        }
         
         switch currentThread.type {
         case "link"?:
