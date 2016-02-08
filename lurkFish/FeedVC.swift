@@ -51,7 +51,8 @@ class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDe
         super.viewWillLayoutSubviews()
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            threadTable.frame = CGRectMake(0, view.bounds.width * 0.1, view.bounds.width * 0.8, view.bounds.height)
+            threadTable.frame = CGRectMake(view.frame.width * 0.05, 0, view.frame.width * 0.9, view.frame.height)
+            threadTable.showsVerticalScrollIndicator = false
         } else {
             threadTable.frame = self.view.bounds
         }
