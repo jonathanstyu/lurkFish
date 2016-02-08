@@ -8,6 +8,7 @@
 
 import Foundation
 import AsyncDisplayKit
+import FLAnimatedImage
 
 extension FeedViewController {
     
@@ -53,6 +54,7 @@ extension FeedViewController {
         case "link"?:
             contentViewer = WeblinkContentViewController(threadVM: currentThread)
             self.navigationController?.pushViewController(contentViewer, animated: true)
+            print(currentThread.url!)
         case "text"?:
             contentViewer = TextContentViewController(threadVM: currentThread)
             self.navigationController?.pushViewController(contentViewer, animated: true)

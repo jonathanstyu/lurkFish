@@ -10,12 +10,14 @@ import UIKit
 import ChameleonFramework
 import AsyncDisplayKit
 import Alamofire
+import Whisper
 
 class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDelegate {
     var type: String!
     var threadTable: ASTableView!
     var threadArray: [Thread]
     var dataSource: FeedItemManager!
+    let downloadingMessage = Message(title: "Downloading Stories ...", textColor: UIColor.whiteColor(), backgroundColor: UIColor.flatYellowColorDark(), images: nil)
     
     convenience init() {
         self.init(url: "feed")
@@ -39,6 +41,7 @@ class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDe
         super.viewDidLoad()
         self.navigationController?.hidesNavigationBarHairline = true
         self.title = "Hot"
+        view.backgroundColor = UIColor.flatWhiteColor()
         
         setUpTable()
         downloadRedditData()
@@ -47,7 +50,11 @@ class FeedViewController: UIViewController, ASTableViewDataSource, ASTableViewDe
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        threadTable.frame = self.view.bounds
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            threadTable.frame = CGRectMake(0, view.bounds.width * 0.1, view.bounds.width * 0.8, view.bounds.height)
+        } else {
+            threadTable.frame = self.view.bounds
+        }
     }
     
 }

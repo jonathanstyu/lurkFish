@@ -14,10 +14,9 @@ class ThreadViewModel: NSObject {
     var attachedMedia: Media?
     
     var date: String!
-    var type: String?
+    var type: String!
     var numberOfComments: String?
     var score: String?
-    var postType: String?
     var author: String?
     var subreddit: String?
     var url: String?
@@ -28,40 +27,24 @@ class ThreadViewModel: NSObject {
     
     init(thread: Thread) {
         self.thread = thread
-        self.date = NSDateFormatter.localizedStringFromDate(thread.created_utc!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-        self.numberOfComments = String(thread.num_comments!)
-        self.author = thread.author
-        self.subreddit = thread.subreddit
-        self.url = thread.url
-        self.title = thread.title
-        self.score = String(thread.score!)
+        date = NSDateFormatter.localizedStringFromDate(thread.created_utc!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        numberOfComments = String(thread.num_comments!)
+        author = thread.author
+        subreddit = thread.subreddit
+        url = thread.url
+        title = thread.title
+        score = String(thread.score!)
+        type = MediaObjectTypeDeterminer.determineThreadType(thread)
         
-//        Determines the type of post this is going to be 
-        if self.thread?.selftext_html != nil {
-            self.type = "text"
+        if type == "text" {
             self.bodyText = thread.selftext_text
-        } else {
-            self.type = thread.post_hint
         }
         
         if self.thread?.media != nil {
             self.attachedMedia = thread.media!
         }
         
-        switch thread.score! {
-        case let x where x > 5000:
-            self.scoreColor = UIColor.flatRedColor()
-        case 4000..<5000:
-            self.scoreColor = UIColor.flatOrangeColorDark()
-        case 300..<4000:
-            self.scoreColor = UIColor.flatWatermelonColorDark()
-        case 2000..<3000:
-            self.scoreColor = UIColor.flatMagentaColorDark()
-        case 1000..<2000:
-            self.scoreColor = UIColor.flatGrayColorDark()
-        default:
-            self.scoreColor = UIColor.blackColor()
-        }
+        scoreColor = UIColor.flatOrangeColorDark()
     }
     
 }

@@ -10,7 +10,7 @@ target 'lurkFish' do
     pod 'AlamofireObjectMapper'
     pod 'AsyncSwift'
     pod 'FLAnimatedImage', '~> 1.0'
-    
+    pod 'Whisper'
 end
 
 target 'lurkFishTests' do

@@ -11,33 +11,42 @@ import AsyncDisplayKit
 
 struct MediaObjectTypeDeterminer {
     
+    static func determineThreadType(thread: Thread) -> String {
+        if thread.selftext_html != nil {
+            return "text"
+        } else if thread.url!.rangeOfString("gif") != nil {
+            return "gif"
+        } else {
+            switch thread.post_hint {
+            case "link"?:
+                return "link"
+            case "text"?:
+                return "text"
+            case "image"?:
+                return "image"
+            case "rich:video"?:
+                return "rich:video"
+            default:
+                return "empty"
+            }
+        }
+    }
+    
     static func determineNodeCellType(threadVM: ThreadViewModel) -> ThreadNode {
         switch threadVM.type {
-        case "link"?:
+        case "link":
             return ThreadNode(threadVM: threadVM)
-        case "text"?:
+        case "text":
             return TextThreadNode(threadVM: threadVM)
-        case "image"?:
+        case "image":
             return ImageThreadNode(threadVM: threadVM)
-        case "rich:video"?:
+        case "rich:video":
+            return VideoThreadNode(threadVM: threadVM)
+        case "gif":
             return VideoThreadNode(threadVM: threadVM)
         default:
             return ThreadNode(threadVM: threadVM)
         }
-    }
-    
-    static func determineContentViewer(threadVM: ThreadViewModel) -> ContentViewController {
-        switch threadVM.type {
-        case "link"?:
-            return ContentViewController(threadVM: threadVM)
-        case "text"?:
-            return ContentViewController(threadVM: threadVM)
-//        case "image"?:
-//            return ImageThreadNode(threadVM: threadVM)
-//        case "rich:video"?:
-//            return VideoThreadNode(threadVM: threadVM)
-        default:
-            return ContentViewController(threadVM: threadVM)
-        }
-    }
+    }    
+
 }
