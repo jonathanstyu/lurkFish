@@ -42,7 +42,7 @@ class ThreadNode: ASCellNode {
         typeNode = ASTextNode()
         super.init()
         
-        postType = "link"
+        postType = threadVM.type
         setUpSubNodesWithThread(threadVM)
     }
     

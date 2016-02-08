@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class ImageContainer: Mappable {
-    var source: [ImageURL]?
+    var source: ImageURL?
     var resolutions: [ImageURL]?
     
     required init?(_ map: Map) {

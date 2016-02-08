@@ -24,6 +24,7 @@
 		314A15A01C308E8200903193 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A159F1C308E8200903193 /* Thread.swift */; };
 		314A15A21C30906400903193 /* RedditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15A11C30906400903193 /* RedditResponse.swift */; };
 		314A15A41C3095A400903193 /* FeedVC-Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A15A31C3095A400903193 /* FeedVC-Data.swift */; };
+		3191A7931C690D6D00165E34 /* JTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3191A7921C690D6D00165E34 /* JTabBarVC.swift */; };
 		31BBC05C1C35A4FF00D8B86D /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC05B1C35A4FF00D8B86D /* ImageContainer.swift */; };
 		31BBC05E1C35A55100D8B86D /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC05D1C35A55100D8B86D /* ImageURL.swift */; };
 		31BBC0601C35DD9000D8B86D /* ThreadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BBC05F1C35DD9000D8B86D /* ThreadNode.swift */; };
@@ -83,6 +84,7 @@
 		314A15A11C30906400903193 /* RedditResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditResponse.swift; sourceTree = "<group>"; };
 		314A15A31C3095A400903193 /* FeedVC-Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedVC-Data.swift"; sourceTree = "<group>"; };
 		314A15A51C309F5300903193 /* lurkFish-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lurkFish-Bridging-Header.h"; sourceTree = "<group>"; };
+		3191A7921C690D6D00165E34 /* JTabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JTabBarVC.swift; sourceTree = "<group>"; };
 		31BBC05B1C35A4FF00D8B86D /* ImageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 		31BBC05D1C35A55100D8B86D /* ImageURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
 		31BBC05F1C35DD9000D8B86D /* ThreadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadNode.swift; sourceTree = "<group>"; };
@@ -229,9 +231,9 @@
 		31BBC05A1C35A47D00D8B86D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				314A15A11C30906400903193 /* RedditResponse.swift */,
 				31BBC05B1C35A4FF00D8B86D /* ImageContainer.swift */,
 				31BBC05D1C35A55100D8B86D /* ImageURL.swift */,
-				314A15A11C30906400903193 /* RedditResponse.swift */,
 				31BBC0651C37493B00D8B86D /* Media.swift */,
 				314A159F1C308E8200903193 /* Thread.swift */,
 			);
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				31C8963C1C5537E0008B61F6 /* FeedDataItems.swift */,
+				3191A7921C690D6D00165E34 /* JTabBarVC.swift */,
 				3125C3871C626E1A0094A896 /* JASTextNode.swift */,
 				31C896471C555BED008B61F6 /* JASNetworkImageNode.swift */,
 				3125C3851C5FE4FC0094A896 /* SyntaxTextStorage.swift */,
@@ -456,6 +459,7 @@
 				3125C3821C5E9D0C0094A896 /* PhotoContentVC.swift in Sources */,
 				314A15A01C308E8200903193 /* Thread.swift in Sources */,
 				314A15A21C30906400903193 /* RedditResponse.swift in Sources */,
+				3191A7931C690D6D00165E34 /* JTabBarVC.swift in Sources */,
 				31BBC05E1C35A55100D8B86D /* ImageURL.swift in Sources */,
 				314A15A41C3095A400903193 /* FeedVC-Data.swift in Sources */,
 				31BBC05C1C35A4FF00D8B86D /* ImageContainer.swift in Sources */,

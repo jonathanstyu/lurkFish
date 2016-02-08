@@ -14,8 +14,12 @@ struct MediaObjectTypeDeterminer {
     static func determineThreadType(thread: Thread) -> String {
         if thread.selftext_html != nil {
             return "text"
-        } else if thread.url!.rangeOfString("gif") != nil {
+        } else if thread.url!.rangeOfString(".gif") != nil {
             return "gif"
+        } else if thread.url!.rangeOfString(".jpg") != nil || thread.url!.rangeOfString(".png") != nil {
+            return "image"
+        } else if thread.url != nil {
+            return "link"
         } else {
             switch thread.post_hint {
             case "link"?:
@@ -35,7 +39,11 @@ struct MediaObjectTypeDeterminer {
     static func determineNodeCellType(threadVM: ThreadViewModel) -> ThreadNode {
         switch threadVM.type {
         case "link":
-            return ThreadNode(threadVM: threadVM)
+            if threadVM.preview != nil {
+                return ImageThreadNode(threadVM: threadVM)
+            } else {
+                return ThreadNode(threadVM: threadVM)
+            }
         case "text":
             return TextThreadNode(threadVM: threadVM)
         case "image":

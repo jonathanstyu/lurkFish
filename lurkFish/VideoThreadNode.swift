@@ -40,7 +40,6 @@ class VideoThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
         verticalVideoContainerStack = ASStackLayoutSpec()
         super.init(threadVM: threadVM)
         
-        postType = "video"
         setUpSubNodesWithThread(threadVM)
     }
     

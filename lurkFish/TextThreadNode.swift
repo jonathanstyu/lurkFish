@@ -19,7 +19,6 @@ class TextThreadNode: ThreadNode {
         verticalTextLayoutSpec = ASStackLayoutSpec()
         super.init(threadVM: threadVM)
         
-        postType = "text"
         setUpSubNodesWithThread(threadVM)
     }
     

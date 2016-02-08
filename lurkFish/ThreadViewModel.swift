@@ -22,6 +22,7 @@ class ThreadViewModel: NSObject {
     var url: String?
     var title: String?
     var bodyText: String?
+    var preview: [ImageContainer]?
     
     var scoreColor: UIColor!    
     
@@ -42,6 +43,10 @@ class ThreadViewModel: NSObject {
         
         if self.thread?.media != nil {
             self.attachedMedia = thread.media!
+        }
+        
+        if self.thread?.preview != nil {
+            self.preview = thread.preview!
         }
         
         scoreColor = UIColor.flatOrangeColorDark()

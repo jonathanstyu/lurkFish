@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         starNVC.viewControllers = [FeedViewController(url: "/r/bitcoin")]
         starNVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 2)
         
-        tabBar = UITabBarController()
+        tabBar = JTabBar()
         tabBar.viewControllers = [feedNVC, starNVC]
         
         self.window!.rootViewController = tabBar

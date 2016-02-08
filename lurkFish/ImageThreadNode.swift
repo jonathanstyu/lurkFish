@@ -16,12 +16,10 @@ class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
     
     override init(threadVM: ThreadViewModel) {
         imageNode = JASNetworkImageNode()
-        imageNode.URL = NSURL(string: threadVM.url!)
         imageNode.placeholderColor = UIColor.flatGrayColor()
         super.init(threadVM: threadVM)
         imageNode.delegate = self
         
-        postType = "image"
         setUpSubNodesWithThread(threadVM)
     }
     
@@ -46,6 +44,17 @@ class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
     
     override func setUpSubNodesWithThread(threadVM: ThreadViewModel) {
         super.setUpSubNodesWithThread(threadVM)
+        
+        if threadVM.url!.rangeOfString(".png") != nil || threadVM.url!.rangeOfString(".jpg") != nil {
+            imageNode.URL = NSURL(string: threadVM.url!)
+        } else if threadVM.preview != nil {
+            let source: ImageURL = (threadVM.preview!.first?.source)!
+            imageNode.URL = NSURL(string: source.url!)
+        } else {
+            imageNode.URL = NSURL(string: threadVM.url!)
+        }
+        
+        
         addSubnode(imageNode)
     }
     
@@ -61,4 +70,5 @@ class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
 //        When the imageNode within the core item gets fully loaded, we rerun the layout function and then it resizes itself.
         self.setNeedsLayout()
     }
+    
 }
