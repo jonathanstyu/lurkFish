@@ -53,7 +53,7 @@ class ImageThreadNode: ThreadNode, ASNetworkImageNodeDelegate {
         } else {
             imageNode.URL = NSURL(string: threadVM.url!)
         }
-        
+        imageNode.placeholderFadeDuration = 0.5
         
         addSubnode(imageNode)
     }
