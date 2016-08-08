@@ -15,7 +15,7 @@ struct MediaObjectTypeDeterminer {
         if thread.selftext_html != nil {
             return "text"
         } else if thread.url!.rangeOfString(".gif") != nil {
-            return "gif"
+            return "image"
         } else if thread.url!.rangeOfString(".jpg") != nil || thread.url!.rangeOfString(".png") != nil {
             return "image"
         } else if thread.url != nil {
@@ -29,7 +29,7 @@ struct MediaObjectTypeDeterminer {
             case "image"?:
                 return "image"
             case "rich:video"?:
-                return "rich:video"
+                return "image"
             default:
                 return "empty"
             }
